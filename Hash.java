@@ -66,7 +66,10 @@ public class Hash {
         // Tratamento de colisão: Tentativa quadrática.
         int i = 1;
         while ($table[$index] != null) {
-            if ($table[$index] == $value) return $index;
+            if ($table[$index] == $value) {
+                $table[$index] = null;
+                return $index;
+            }
             $index = ($index + i) % $table.length;
             i++;
         }

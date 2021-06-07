@@ -55,6 +55,12 @@ public class ListaDinamica {
             Node _indicator = _first_attribute;
             Node _node = new Node(_value);
 
+            // Posição 0
+            if (_index == counter) {
+                _node.address = _first_attribute;
+                _first_attribute = _node;
+            }
+
             while (counter < _index) {
                 // ArrayOutOfBoundsException
                 if (_indicator == null) return;
@@ -212,15 +218,13 @@ public class ListaDinamica {
      * Mostra os elementos da lista.
      */
     void show() {
-        String result = "";
         Node _indicator = _first_attribute;
 
         while (_indicator != null) {
-            result = result.concat(String.format("%s ", _indicator.data));
+            System.out.print(_indicator.data + " ");
             _indicator = _indicator.address;
         }
-
-        System.out.println(result.substring(0, result.length() - 1));
+        System.out.println();
     }
 
     /**
@@ -264,5 +268,4 @@ public class ListaDinamica {
         first_address.data = second_address.data;
         second_address.data = _temp;
     }
-
 }
