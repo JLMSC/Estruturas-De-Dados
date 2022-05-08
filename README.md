@@ -1,2 +1,2 @@
-# Estruturas_De_Dados
+# Estruturas de dados
 Implementações de algumas estruturas de dados.
